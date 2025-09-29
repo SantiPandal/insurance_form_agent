@@ -1,0 +1,308 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    AFIRME CAR INSURANCE QUOTE PROCESS                       ║
+║                         Step-by-Step Visual Guide                           ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📋 OVERVIEW: Complete process takes 5-10 minutes due to slow loading times
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            🏠 STEP 1: LOGIN                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+url: https://www.afirmeseguros.com/cercania360/#/login
+    ┌─────────────────────────────────────┐
+    │    Bienvenido a tu portal digital   │
+    │         de Afirme Seguros           │
+    │                                     │
+    │  Usuario:    [____________]         │
+    │  Contraseña: [____________]         │
+    │                                     │
+    │           [  ENTRAR  ]              │
+    └─────────────────────────────────────┘
+    
+
+Usuario: danos@brove.com.mx
+Contraseña: Brove202
+
+
+
+    ⏱️  Wait: 5 seconds loading time
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         👥 STEP 2: SELECT ROLE                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    Three options appear:
+    
+    ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
+    │ AGT         │  │ AGT         │  │ AGT         │
+    │ Siniestros  │  │ Cobranzas   │  │ Emisión   ★  │ ← CLICK THIS ONE
+    │             │  │             │  │             │
+    └─────────────┘  └─────────────┘  └─────────────┘
+    
+    ⏱️  Wait: 5-10+ seconds loading time
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      📋 STEP 3: NAVIGATE TO QUOTES                         │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    Portal opens with 3 images (anniversary, registration, auto)
+    
+    Left Menu:
+    ┌─────────────────────┐
+    │ ☰ MENU              │
+    │                     │
+    │ • Inicio.           │
+    │ • Cotización y      │ ← CLICK HERE
+    │   Emisión           │
+    │ • Admon. de Poliza  │
+    │ • Siniestros        │
+    └─────────────────────┘
+
+wait 5 seconds
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       🚗 STEP 4: SELECT PRODUCT                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    Page loads with Auto tab pre-selected:
+
+    Top tabs:
+    ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
+    │    Auto     │  │    Daños    │  │    Vida     │
+    │ (selected) ★│  │             │  │             │
+    └─────────────┘  └─────────────┘  └─────────────┘
+
+    Auto category options displayed:
+
+    ┌─────────────────────┐  ┌─────────────────────┐  ┌─────────────────────┐  ┌─────────────────────┐
+    │                     │  │                     │  │                     │  │                     │
+    │    Cotización       │  │   Cotizador RC     │  │  Flotilla Express   │  │   Búsqueda de      │
+    │    Individual     ★ │  │   Obligatorio       │  │                     │  │   Cotizaciones     │
+    │                     │  │                     │  │                     │  │                     │
+    └─────────────────────┘  └─────────────────────┘  └─────────────────────┘  └─────────────────────┘
+         ↑ CLICK HERE
+
+                              ┌─────────────────────┐
+                              │                     │
+                              │        VTA          │
+                              │                     │
+                              └─────────────────────┘
+
+    ⏱️  Wait: 3 seconds, then 10-15+ seconds for auto page to load
+
+
+New Agent
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     📝 STEP 5: VEHICLE INFORMATION                         │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    ╔════════════════════════════════════════════════════════════════════════╗
+    ║                   Bienvenida al Cotizador de Automóviles              ║
+    ╚════════════════════════════════════════════════════════════════════════╝
+    
+    Product Selection Tab:
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ Producto:        [SP ▼]                                                 │
+    │ Tipo Vigencia:   [Anual ▼]                                             │
+    │ Municipio:       [Auto-filled]                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      🔧 STEP 6: VEHICLE DETAILS                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │ Marca:           [General Motors ▼]                                     │
+    │ Vehículo:        [Chevrolet Brew ▼]                                     │
+    │ Código Postal:   [_______]                                              │
+    │ Submarca:        [Activa ▼]                                             │
+    │ Tipo Póliza:     [Auto Individual ▼]                                    │
+    │ Estado:          [Auto-filled]                                          │
+    │ Uso:             [Only one option ▼]                                    │
+    │ Año:             [2022 ▼]                                               │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+
+Return to the previous agent. 
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        ✅ STEP 7: SUBMIT & QUOTE                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+    After filling all fields:
+    
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │                                                                         │
+    │                                              [  SIGUIENTE  ]           │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+    
+    System saves quote and generates name automatically
+    
+    Final step:
+    ┌─────────────────────────────────────────────────────────────────────────┐
+    │                                                                         │
+    │                        [  IMPRIMIR  ] 📄                               │
+    │                                                                         │
+    └─────────────────────────────────────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                              ⚠️  IMPORTANT NOTES                            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+🐌 SLOW WEBSITE:
+    Step 1: 5 seconds
+    Step 2: 5-10+ seconds  
+    Step 4: 3 seconds + 15-30+ seconds
+    Total: Can take 1+ minute just for loading
+
+🔑 CRITICAL CHOICES:
+    • Must select "AGT Misión" (not Siniestros or Cobranzas)
+    • Must click "AUTO" product type
+    • Most fields auto-populate based on selections
+
+📋 TYPICAL FORM DATA:
+    • Marca: General Motors
+    • Vehículo: Chevrolet Brew  
+    • Submarca: Activa
+    • Año: 2022
+    • Tipo Póliza: Auto Individual
+
+🎯 SUCCESS INDICATOR:
+    When you can click "IMPRIMIR" and get a PDF quote
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                              📊 PROCESS FLOW                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Login → Role Selection → Menu Navigation → Product Selection → Form Fill → Quote
+  ↓         ↓               ↓                  ↓               ↓         ↓
+  5s      5-10s           Fast             3s+30s          Fast      PDF
+
+Total Time: 1-2 minutes (mostly waiting for slow pages)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                            🎓 LEARNING POINTS                               ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+1. PATIENCE: This website is extremely slow - normal behavior
+2. PATH MATTERS: Wrong role selection = can't reach quotes  
+3. AUTO-FILL: System fills many fields automatically
+4. SEQUENCE: Each step depends on previous step completing
+5. GOAL: PDF quote is the success endpoint
+
+Think of it like: 
+🚪 Enter building → 🏢 Choose right elevator → 📋 Find right office →
+🚗 Fill form → 📄 Get document
+
+Each arrow represents a waiting period where the system processes your choice.
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                            🤖 AGENT PROMPTS                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+MAIN NAVIGATION AGENT PROMPT:
+═══════════════════════════════════════════════════════════════════════════════
+
+You are an insurance quote automation agent for Afirme Seguros. Your task is to navigate through their web portal and obtain car insurance quotes.
+
+CONTEXT:
+- Website: https://www.afirmeseguros.com/cercania360/#/login
+- System is extremely slow (5-30+ seconds per page load)
+- Each action must wait for full page load before proceeding
+
+YOUR RESPONSIBILITIES:
+1. Login with provided credentials
+2. Select "AGT Emisión" role (NOT Siniestros or Cobranzas)
+3. Navigate to "Cotización y Emisión" from left menu
+4. Click "Cotización Individual" under Auto section
+5. Hand off to Vehicle Data Agent when form appears
+6. Resume control after vehicle data is filled
+7. Complete quote generation and save PDF
+
+CRITICAL RULES:
+- ALWAYS wait for specified loading times
+- NEVER skip steps or rush through pages
+- VERIFY each page loaded completely before proceeding
+- If error occurs, retry from last successful step
+- Success = PDF quote generated
+
+HANDOFF PROTOCOL:
+When you reach Step 5 (Vehicle Information form):
+1. STOP your execution
+2. Call Vehicle Data Agent with current page state
+3. Wait for completion signal
+4. Resume at Step 7 (Submit & Quote)
+
+═══════════════════════════════════════════════════════════════════════════════
+VEHICLE DATA AGENT PROMPT:
+═══════════════════════════════════════════════════════════════════════════════
+
+You are an intelligent form-filling agent specialized in vehicle insurance quotes. Your task is to complete vehicle information forms on insurance websites.
+
+CONTEXT:
+- You receive control when a vehicle information form is detected
+- Insurance forms typically have interdependent fields (dropdowns that affect other dropdowns)
+- Some fields auto-populate based on previous selections
+- Forms may load data dynamically and require waiting
+
+YOUR CAPABILITIES:
+- Analyze form structure and identify required fields
+- Understand field relationships and dependencies
+- Fill forms with provided vehicle data
+- Handle dynamic form behavior and wait for fields to populate
+- Verify data accuracy before submission
+
+YOUR TASK:
+1. Analyze the current form to understand its structure
+2. Identify all required fields and their types (dropdown, text input, etc.)
+3. Fill the form with the provided vehicle information
+4. Handle any dynamic behavior (waiting for dropdowns to load, auto-population)
+5. Ensure all required fields are completed accurately
+
+CRITICAL RULES:
+- OBSERVE how the form behaves - some selections trigger other fields to populate
+- WAIT for dynamic content to load after making selections
+- VERIFY that auto-filled fields contain correct data
+- ADAPT to the specific form's requirements and flow
+- DO NOT submit the form - only fill it completely and return control
+
+INTELLIGENCE GUIDELINES:
+- Use context clues from field labels to understand what data belongs where
+- If a field has limited options, select the most appropriate one
+- Recognize common insurance form patterns (vehicle make/model hierarchies)
+- Handle edge cases gracefully (missing options, unexpected fields)
+
+COMPLETION:
+When form is fully populated:
+1. Verify all required fields have valid values
+2. Document any fields that couldn't be filled and why
+3. Return control to the main agent with status report
+
+ERROR HANDLING:
+- If a field won't populate: wait, retry, then document the issue
+- If an option doesn't exist: select the closest match and note the discrepancy
+- If form structure is unexpected: adapt and complete what's possible
+
+═══════════════════════════════════════════════════════════════════════════════
+MOCK DATA FOR TESTING:
+═══════════════════════════════════════════════════════════════════════════════
+
+VEHICLE INFORMATION:
+- Product Type: SP
+- Policy Duration: Anual (Annual)
+- Vehicle Make: General Motors
+- Vehicle Model: Chevrolet Brew
+- Sub-model: Activa
+- Year: 2022
+- Policy Type: Auto Individual
+- Usage: (Select the only available option)
+- Postal Code: 11000 (or any valid Mexican postal code)
+
+LOGIN CREDENTIALS:
+- Username: danos@brove.com.mx
+- Password: Brove202
+
+EXPECTED OUTCOME:
+- Successfully generated PDF quote for a 2022 Chevrolet Brew
+- Quote should show annual premium for individual auto insurance
+- PDF filename typically includes date and quote reference number
