@@ -162,6 +162,26 @@ st.markdown(f"""
         font-weight: 400;
     }}
 
+    /* Progress container - solid white background like form */
+    .progress-container {{
+        background: white !important;
+        padding: 1.5rem !important;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        margin: 1rem 0 2rem 0;
+    }}
+
+    /* Progress bar styling - fully opaque */
+    .stProgress > div > div > div > div {{
+        background-color: #10a37f !important;
+        opacity: 1 !important;
+    }}
+
+    .stProgress > div > div {{
+        background-color: #e5e7eb !important;
+        opacity: 1 !important;
+    }}
+
     .phase-container {{
         background: #f9fafb;
         border: 1px solid #e5e7eb;
@@ -255,77 +275,57 @@ if submitted:
             "doors": "5 puertas"
         }
 
-        # Four main phases
+        # Three main phases (Extract merged into Select)
         phase_labels = [
-            "Navigation",
-            "Extract Options",
-            "Select Vehicle",
-            "Complete Form"
+            "🚀 Navigation",
+            "🎯 Select Vehicle",
+            "✅ Complete Form"
         ]
 
-        # Progress container
-        progress_placeholder = st.empty()
-
-        # Current phase state
-        current_phase = [0]  # Using list to modify in nested function
-
-        def render_phases():
-            """Render 4-phase progress UI"""
-            html = '<div class="phase-container">'
-
-            for i, label in enumerate(phase_labels):
-                phase_num = i + 1
-
-                if phase_num < current_phase[0]:
-                    status = "complete"
-                    icon = "✓"
-                elif phase_num == current_phase[0]:
-                    status = "active"
-                    icon = str(phase_num)
-                else:
-                    status = "pending"
-                    icon = str(phase_num)
-
-                html += f'''
-                <div class="phase-item">
-                    <div class="phase-icon phase-{status}">{icon}</div>
-                    <div class="phase-text">{label}</div>
-                </div>
-                '''
-
-            html += '</div>'
-            return html
+        # Progress container with solid background
+        with st.container():
+            st.markdown('<div class="progress-container">', unsafe_allow_html=True)
+            progress_bar = st.progress(0)
+            status_text = st.empty()
+            st.markdown('</div>', unsafe_allow_html=True)
 
         def update_progress(phase: int, message: str):
-            """Update progress display"""
+            """Update progress display with simple progress bar"""
             if phase == -1:
                 st.error(f"❌ {message}")
                 return
 
-            # Map internal phases to our 4 main phases
-            if phase <= 1:
-                current_phase[0] = 1  # Navigation
+            # Calculate progress percentage (0-100)
+            if phase == 0:
+                progress_value = 0
+                phase_name = "Initializing..."
+            elif phase == 1:
+                progress_value = 33
+                phase_name = phase_labels[0]
             elif phase == 2:
-                current_phase[0] = 2  # Extract
-            elif phase == 3:
-                current_phase[0] = 3  # Select
-            elif phase >= 4:
-                current_phase[0] = 4  # Complete
+                progress_value = 66
+                phase_name = phase_labels[1]
+            elif phase >= 3:
+                progress_value = 100
+                phase_name = phase_labels[2]
+            else:
+                progress_value = 0
+                phase_name = message
 
-            # Render updated UI
-            progress_placeholder.markdown(render_phases(), unsafe_allow_html=True)
+            # Update progress bar and status
+            progress_bar.progress(progress_value)
+            status_text.info(f"**{phase_name}** - {message}")
 
-        # Initial render
-        progress_placeholder.markdown(render_phases(), unsafe_allow_html=True)
+        # Initial state
+        status_text.info("🔄 Ready to start automation...")
 
         # Run automation
         try:
             result = asyncio.run(run_quote(vehicle_info, update_progress))
 
             if result["status"] == "success":
-                current_phase[0] = 5  # Mark all complete
-                progress_placeholder.markdown(render_phases(), unsafe_allow_html=True)
-                st.success("✅ Quote generated successfully!")
+                progress_bar.progress(100)
+                status_text.success("✅ Quote generated successfully!")
                 st.balloons()
             else:
                 st.error(f"Error: {result['message']}")

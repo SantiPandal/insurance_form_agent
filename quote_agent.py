@@ -5,15 +5,15 @@ import asyncio
 import os
 from typing import Callable, Optional
 from dotenv import load_dotenv
-from browser_use import Agent, Browser, ChatAnthropic
+from browser_use import Agent, Browser, ChatAnthropic, ChatOpenAI
+
 
 load_dotenv()
 
-# Model configuration
-NAVIGATION_MODEL = os.getenv("NAVIGATION_MODEL", "claude-3-5-haiku-20241022")
-EXTRACT_MODEL = os.getenv("EXTRACT_MODEL", "claude-3-5-haiku-20241022")
+# Model configuration - OpenAI, Sonnet, OpenAI
+NAVIGATION_MODEL = os.getenv("NAVIGATION_MODEL", "gpt-4.1-mini")
 SELECT_MODEL = os.getenv("SELECT_MODEL", "claude-sonnet-4-5-20250929")
-COMPLETION_MODEL = os.getenv("COMPLETION_MODEL", "claude-3-5-haiku-20241022")
+COMPLETION_MODEL = os.getenv("COMPLETION_MODEL", "gpt-4.1-mini")
 
 
 def build_prompts(vehicle_info: dict):
@@ -41,16 +41,13 @@ IMPORTANT:
 - Use scroll if needed
 """
 
-    extract_prompt = f"""
-Type "{vehicle_info['brand']} {vehicle_info['model']} {vehicle_info['year']}" in the vehicle search box.
-Wait 2 seconds for the dropdown suggestions to appear.
-Use extract_page_content action to get ALL visible dropdown options.
-Return the complete list of available vehicles shown.
-
-STOP after extracting the list.
-"""
+    # Extract base model name (first word/alphanumeric part of model)
+    base_model = vehicle_info['model'].split()[0] if ' ' in vehicle_info['model'] else vehicle_info['model']
 
     select_prompt = f"""
+Type "{vehicle_info['brand']} {base_model} {vehicle_info['year']}" in the vehicle search box.
+Wait 2 seconds for the dropdown suggestions to appear.
+
 From the dropdown list, select the vehicle that BEST matches these specifications:
 - Brand: {vehicle_info['brand']}
 - Model: {vehicle_info['model']}
@@ -64,6 +61,7 @@ SELECTION CRITERIA:
 - Focus on semantic matching, not exact string matching
 - Use click_element action to select the best match
 
+- Scroll down to see the zip code text field.
 - Add the zip code: {vehicle_info.get('zip_code', '05100')}
 - Use the click_element action to select the zone depicted in the zip code. It should be a single option in a dropdown.
 
@@ -89,7 +87,7 @@ IMPORTANT:
 - Scroll 2 pages = enough to see full form sections
 """
 
-    return navigation_prompt, extract_prompt, select_prompt, completion_prompt
+    return navigation_prompt, select_prompt, completion_prompt
 
 
 async def run_quote(vehicle_info: dict, progress_callback: Optional[Callable] = None):
@@ -109,53 +107,43 @@ async def run_quote(vehicle_info: dict, progress_callback: Optional[Callable] = 
 
     try:
         update_progress(0, "Building prompts...")
-        nav_prompt, extract_prompt, select_prompt, completion_prompt = build_prompts(vehicle_info)
+        nav_prompt, select_prompt, completion_prompt = build_prompts(vehicle_info)
 
         update_progress(0, "Starting browser...")
         browser = Browser(keep_alive=True)
         await browser.start()
 
         try:
-            # Phase 1: Navigation
+            # Phase 1: Navigation (OpenAI)
             update_progress(1, "Navigating to quote form...")
             nav_agent = Agent(
                 task=nav_prompt,
                 browser_session=browser,
-                llm=ChatAnthropic(model=NAVIGATION_MODEL)
+                llm=ChatOpenAI(model=NAVIGATION_MODEL)
             )
             await nav_agent.run(max_steps=20)
             await asyncio.sleep(2)
 
-            # Phase 2A: Extract
-            update_progress(2, "Extracting vehicle options...")
-            extract_agent = Agent(
-                task=extract_prompt,
-                browser_session=browser,
-                llm=ChatAnthropic(model=EXTRACT_MODEL)
-            )
-            await extract_agent.run(max_steps=10)
-            await asyncio.sleep(2)
-
-            # Phase 2B: Select
-            update_progress(3, "Selecting vehicle...")
+            # Phase 2: Select (Claude Sonnet - type and select vehicle)
+            update_progress(2, "Selecting vehicle...")
             select_agent = Agent(
                 task=select_prompt,
                 browser_session=browser,
                 llm=ChatAnthropic(model=SELECT_MODEL)
             )
-            await select_agent.run(max_steps=10)
+            await select_agent.run(max_steps=15)
             await asyncio.sleep(2)
 
-            # Phase 3: Complete
-            update_progress(4, "Completing quote form...")
+            # Phase 3: Complete (OpenAI)
+            update_progress(3, "Completing quote form...")
             completion_agent = Agent(
                 task=completion_prompt,
                 browser_session=browser,
-                llm=ChatAnthropic(model=COMPLETION_MODEL)
+                llm=ChatOpenAI(model=COMPLETION_MODEL)
             )
             await completion_agent.run(max_steps=20)
 
-            update_progress(5, "Quote completed successfully!")
+            update_progress(4, "Quote completed successfully!")
 
             # Keep browser open briefly
             await asyncio.sleep(10)
