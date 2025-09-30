@@ -22,11 +22,11 @@ cd insurance_form_agent
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies with uv (faster)
+uv pip install -r requirements.txt
 
 # Install Playwright browsers
-playwright install chromium --with-deps
+uv playwright install chromium --with-deps
 ```
 
 ### 2. Configure API Keys
