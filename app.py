@@ -1,6 +1,6 @@
 """
 Insurance Quote Generator - Streamlit UI
-OpenAI-inspired minimal design
+OpenAI-inspired minimal design test 1
 """
 import streamlit as st
 import asyncio
